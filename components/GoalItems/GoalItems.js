@@ -7,7 +7,7 @@ const goalItems = (props) => {
     return (
         <FlatList 
           data={props.goals} 
-          renderItem={(goal) => <GoalItem item={goal.item.value}/>}
+          renderItem={(goal) => <GoalItem goal={goal} onDelete={(key)=>{props.deleteHandler(key)}}/>}
            />
     )
 }
