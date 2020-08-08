@@ -4,7 +4,7 @@ import GoalItems from './components/GoalItems/GoalItems';
 import UserInputArea from './components/userInputArea/userInputArea';
 
 export default function App() {
-  const [enteredText, setEnteredText] = useState({});
+  const [enteredText, setEnteredText] = useState({key:Math.random().toString(), value:''});
   const [courseGoals, setCourseGoals] = useState([]);
   const [modalVisible,setModalVisible] = useState(false);
   const textInputHandler = (text) => {
@@ -12,8 +12,11 @@ export default function App() {
   }
 
   const addGoalHandler = () => {
+    if(enteredText.value == ''){
+      return;
+    }
     setCourseGoals((prevCourseGoals) => [...prevCourseGoals, {value:enteredText, key: Math.random().toString()}])
-    setEnteredText({});
+    setEnteredText({key:Math.random().toString(), value:''});
   }
 
   const deleteGoalHandler = (key) => {
@@ -29,7 +32,9 @@ export default function App() {
   return (
 
       <View style={style.screen}>
-        <Button onPress={modalToggle} title='Add New Goal'/>
+        <View style={style.add}>
+          <Button onPress={modalToggle} title='Add New Goal' color='white'/>
+        </View>
         <UserInputArea 
         changeHandler={textInputHandler} 
         addHandler={addGoalHandler} 
@@ -50,5 +55,12 @@ export default function App() {
 const style = StyleSheet.create({
   screen: {
     padding: 50
-  }
+  },
+  add: {
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: 'black',
+    backgroundColor: 'blue'
+    
+}
 })
