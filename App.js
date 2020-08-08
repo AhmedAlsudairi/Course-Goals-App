@@ -13,6 +13,7 @@ export default function App() {
 
   const addGoalHandler = () => {
     setCourseGoals((prevCourseGoals) => [...prevCourseGoals, {value:enteredText, key: Math.random().toString()}])
+    setEnteredText({});
   }
 
   const deleteGoalHandler = (key) => {
