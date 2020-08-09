@@ -54,7 +54,7 @@ export default function App() {
 
 const style = StyleSheet.create({
   screen: {
-    padding: 50
+    padding: 50,
   },
   add: {
     borderWidth: 1,

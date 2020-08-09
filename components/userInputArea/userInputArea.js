@@ -42,19 +42,23 @@ const style = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        width: '40%'
+        width: '60%'
     },
     add: {
         borderWidth: 1,
         borderRadius: 5,
         borderColor: 'black',
-        backgroundColor: 'blue'
+        backgroundColor: 'blue',
+        flex: 1,
+        marginRight: 10
     },
     cancel: {
         borderWidth: 1,
         borderRadius: 5,
         borderColor: 'black',
-        backgroundColor: 'red'
+        backgroundColor: 'red',
+        flex: 1,
+        marginLeft: 10
     }
 })
 export default goalItems;
